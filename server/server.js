@@ -5,6 +5,7 @@ const connectDB =require('./config/db')
 require("./models/orderModel.js");
 require("./models/productModel.js");
 require("./models/userModel.js");
+const {notFound,errorHandler} = require('./middleware/errorMiddleware.js');
 const app=express();
 const productRoutes = require('./routes/productRoutes.js')
 
@@ -13,6 +14,8 @@ dotenv.config()
 connectDB()
 
 app.use('/api/products',productRoutes)
+app.use(errorHandler);
+app.use(notFound);
 
 
 
