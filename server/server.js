@@ -1,19 +1,22 @@
 const express=require('express');
 const dotenv = require('dotenv');
 const connectDB =require('./config/db')
-// const products = require('./data/products')
 require("./models/orderModel.js");
 require("./models/productModel.js");
 require("./models/userModel.js");
 const {notFound,errorHandler} = require('./middleware/errorMiddleware.js');
-const app=express();
-const productRoutes = require('./routes/productRoutes.js')
+
+const productRoutes = require('./routes/productRoutes.js');
+const userRoutes = require('./routes/userRoutes.js');
+const { json } = require('express');
 
 dotenv.config()
-
 connectDB()
+const app=express();
 
+app.use(express.json());
 app.use('/api/products',productRoutes)
+app.use('/api/users',userRoutes)
 app.use(errorHandler);
 app.use(notFound);
 

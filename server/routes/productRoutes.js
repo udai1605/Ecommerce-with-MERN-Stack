@@ -1,26 +1,14 @@
 const mongoose = require('mongoose')
 const express = require('express');
+const Product = mongoose.model("Product");
 const asyncHandler = require('express-async-handler');
 require("../models/productModel.js");
-const Product = mongoose.model("Product");
 
+const {getProducts,getProductById}=require('../controllers/productController')
 const router = express.Router();
 
-router.get('/', asyncHandler(async (req, res) => {   //to fetch all products from api/products
-    const products = await Product.find({})
-    res.json(products)
-})
-)
+router.route('/').get(getProducts);
 
-router.get('/:id', asyncHandler(async (req, res) => {   //fetch specific product from api/products/:id
-    const product = await Product.findById(req.params.id)
-    if (product) {
-        res.json(product)
-    }
-    else {
-        res.status(404)
-        throw new Error('Product not found')
-    }
-})
-)
+router.route('/:id').get(getProductById);
+
 module.exports = router

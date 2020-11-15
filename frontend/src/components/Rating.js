@@ -19,7 +19,7 @@ Rating.defaultProps={     //To give a default value to the color
 }
 
 Rating.propTypes={             //To Check the props are not empty and the datatype is correct
-    value: PropTypes.number.isRequired,
+    value: PropTypes.number,
     text:PropTypes.string.isRequired,
     color: PropTypes.string
 }
