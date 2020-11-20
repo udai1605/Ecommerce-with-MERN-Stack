@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
+import {  Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -180,12 +180,12 @@ const OrderScreen = ({ match }) => {
                         <Loader />
                       ) : (
                           <PayPalButton
-                            amount={5}
+                            amount={(order.totalPrice/74.56).toFixed(2)}
                             onSuccess={successPaymentHandler}
                           />
                         )}
                     </ListGroup.Item>
-                  )}
+                  )}{console.log((order.totalPrice/74.56).toFixed(2))}
                 </ListGroup>
               </Card>
             </Col>
