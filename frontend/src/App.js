@@ -14,6 +14,8 @@ import PaymentScreen from './screens/PaymentScreens'
 import PlaceOrderScreen from './screens/PlaceOrderScreen'
 import OrderScreen from './screens/OrderScreen'
 import UserListScreen from './screens/UserListScreen'
+import UserEditScreen from './screens/UserEditScreen'
+import ProductListScreen from './screens/ProductListScreen'
 function App() {
   return (
     <Router >
@@ -31,6 +33,8 @@ function App() {
           <Route path='/placeorder' component={PlaceOrderScreen} />
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/admin/userlist' component={UserListScreen} />
+          <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+          <Route path='/admin/productlist' component={ProductListScreen} />
         </Container>
       </main>
 

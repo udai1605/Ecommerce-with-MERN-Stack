@@ -9,7 +9,7 @@ const Header = () => {
     const { userInfo } = userLogin
 
 
-    const logoutHandler = () => {
+    const logoutHandler = (history) => {
         dispatch(logout())
     }
     return (
