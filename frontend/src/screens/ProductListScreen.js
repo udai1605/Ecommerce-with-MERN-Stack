@@ -22,11 +22,7 @@ const ProductListScreen = ({ history, match }) => {
 
     const productCreate = useSelector((state) => state.productCreate)
     const {
-        loading: loadingCreate,
-        error: errorCreate,
-        success: successCreate,
-        product: createdProduct,
-    } = productCreate
+        loading: loadingCreate, error: errorCreate, success: successCreate, product: createdProduct } = productCreate
 
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
