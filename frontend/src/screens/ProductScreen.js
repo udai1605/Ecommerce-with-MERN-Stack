@@ -7,6 +7,7 @@ import Rating from '../components/Rating'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
+import Meta from '../components/Meta'
 /* params.id is used here coz we have given product/:id where :id is the params */
 /*const product = products.find(p => p._id === match.params.id)*/
 const ProductScreen = ({ history, match }) => {
@@ -52,7 +53,8 @@ const ProductScreen = ({ history, match }) => {
             <Link className="btn btn-light my-3" to='/'>Go Back</Link>
             {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
                 <>
-                    <Row>
+                    <Meta title={product.name} />
+                    <Row  >
                         <Col md={6}>
                             <Image src={product.image} alt={product.name} fluid />
                         </Col>

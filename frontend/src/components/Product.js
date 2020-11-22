@@ -1,11 +1,11 @@
 import { Card } from 'react-bootstrap'
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Rating from './Rating'
 const Product = ({ product }) => {
     return (
-        <Card className='my-3 p-3 rounded'>
+        <Card className='my-3 p-3 rounded fluid'>
             <Link to={`/products/${product._id}`}>
-                <Card.Img src={product.image} varient='top' />
+                <Card.Img src={product.image} varient='top' className='img-fluid' />
             </Link>
             <Card.Body>
                 <Link to={`/products/${product._id}`}>
