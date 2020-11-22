@@ -40,6 +40,8 @@ h2 {
   padding: 30px;
   margin: 40px;
   border-radius: 10%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .carousel a {
@@ -51,12 +53,5 @@ h2 {
   .carousel-caption h2 {
     font-size: 16px !important;
     color: rgb(153, 129, 62)
-  }
-
-  .carousel img {
-    height: 260px;
-    padding: 10px !important;
-    margin: 20px !important;
-    border-radius: 10%;
   }
 }
